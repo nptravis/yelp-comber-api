@@ -1,0 +1,27 @@
+<h1>Hello World</h1>
+
+<h2>Search for a rest.</h2>
+
+<%= form_tag '/search' do %>
+<%= text_field_tag :search %>
+<%= submit_tag :submit %>
+<% end%>
+<div class="content">
+	
+</div>
+
+<script type="text/javascript">
+	let token = 'mC5YWN_Flo6--_MNCGYaJF9BDQPV1JLCSR9n9uCM47U2qlpUV9CTSvgSbNc71a8U-GEv9xj-jIlX3OU8dr-JY-FeesPQ64FvaqrslE4iXAwgJpdwtmZbVdBbJaWGW3Yx'
+
+	$('form').submit(function(event){
+
+	fetch('https://api.yelp.com/v3/businesses/north-india-restaurant-san-francisco', {
+		headers: {
+			Authorization: `Bearer ${token}`
+		}
+		}).then(res => res.json()).
+	  then(json => console.log(json))
+	  console.log("WHHWHW")
+		return false;
+	})
+</script>
